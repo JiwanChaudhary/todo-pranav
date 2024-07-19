@@ -6,12 +6,9 @@ const UpdateTodo = ({ index }: { index: number }) => {
   const [updatedTodo, setUpdatedTodo] = useState("");
   const { todoList, updateTodo } = useTodoContext();
 
-  // Removed the currentTodo variable as it's no longer directly used
-
   // update
   const handleEditClick = () => {
     setShowModal(true);
-    // Initialize updatedTodo with the current todo's value when showing the modal
     setUpdatedTodo(todoList[index]);
   };
 
@@ -25,7 +22,7 @@ const UpdateTodo = ({ index }: { index: number }) => {
   return (
     <div>
       <button
-        type="button" // Changed to "button" to prevent form submission
+        type="button" 
         className="p-1 bg-green-700 rounded-md"
         onClick={handleEditClick}
       >
@@ -40,7 +37,7 @@ const UpdateTodo = ({ index }: { index: number }) => {
             <input
               type="text"
               name="todo"
-              value={updatedTodo} // Use updatedTodo for the input value
+              value={updatedTodo} 
               className=" text-black px-3 py-2 rounded-md focus:outline-none"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setUpdatedTodo(e.target.value);
