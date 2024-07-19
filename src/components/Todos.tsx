@@ -6,10 +6,8 @@ const Todos = () => {
   const { todoList, setTodoList } = useTodoContext();
 
   return (
-    // main section
-    <section className="mt-5">
-      <div className="p-4 border border-gray-300 rounded-lg">
-        {/* all todo */}
+    <section>
+      <div className="border rounded-lg pt-4">
         <h2 className="m-2 text-lg font-semibold">My Todo</h2>
         <hr />
         {todoList?.length === 0 ? (
@@ -25,7 +23,7 @@ const Todos = () => {
                   <span
                     className={`flex-[4] text-left`}
                   >
-                    {todo}
+                   {index+1}. {todo}
                   </span>
                   {/* update button */}
                   <div className="flex flex-[2] justify-between items-center gap-2">
@@ -34,7 +32,7 @@ const Todos = () => {
                     {/* delete button */}
                     <button
                       type="submit"
-                      className="p-1 bg-red-700 rounded-md"
+                      className="p-2 bg-red-700 rounded-md"
                       onClick={() =>
                         setTodoList(todoList.filter((item) => item !== todo))
                       }
@@ -44,7 +42,7 @@ const Todos = () => {
 
                   </div>
                 </li>
-                <hr />
+                {todo.length - 1 !== index+1 && <hr />}
               </React.Fragment>
             ))}
           </>

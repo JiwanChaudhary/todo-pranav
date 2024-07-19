@@ -22,12 +22,12 @@ const AddTodo = () => {
   };
 
   return (
-    <section className=" mt-5 max-full flex items-center justify-center">
-      <form className=" bg-rose-400 text-lg rounded-md" onSubmit={handleSubmit}>
+    <section className="flex items-center justify-center">
+      <form className="bg-rose-400 text-lg rounded-md flex w-full" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Create new todo"
-          className=" py-2 px-3 outline-none focus:outline-none rounded-l-md text-black"
+          className=" py-2 px-3 outline-none focus:outline-none rounded-l-md text-black w-full flex-[2]"
           name="todo"
           value={todo}
           onChange={handleChange}

@@ -23,7 +23,7 @@ const UpdateTodo = ({ index }: { index: number }) => {
     <div>
       <button
         type="button" 
-        className="p-1 bg-green-700 rounded-md"
+        className="p-2 bg-green-500 rounded-md"
         onClick={handleEditClick}
       >
         Update
